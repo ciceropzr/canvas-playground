@@ -4,19 +4,29 @@ import {
   Layer,
   Group,
   Rect,
-  Circle,
-  Line,
-  Text,
-  Star,
-  Wedge
 } from 'react-konva';
-import logo from './logo.svg';
-import './App.css';
+
+// import logo from './logo.svg';
+// import './App.css';
 
 class App extends Component {
   render() {
     const width = window.innerWidth;
     const height = window.innerHeight;
+    const strokeColor = '#000';
+    const strokeWidth =2;
+
+    const blocksNames = [
+      'key-partners',
+      'key-activities',
+      'key-resources',
+      'value-propositon',
+      'custumer-relatioship',
+      'channels',
+      'custumer-segments',
+      'cost-structure',
+      'revenue-streams'
+    ];
 
     return (
       <div className='App'>
@@ -24,48 +34,98 @@ class App extends Component {
           width={width}
           height={height}>
           <Layer>
-            <Text
-              text='Formas do Canvas:'
-              fontSize={24} />
             <Group>
+
               <Rect
-                x={10}
-                y={30}
-                width={120}
-                height={120}
-                fill={'red'}
-                draggable={true} />
-              <Circle
-                x={250}
-                y={120}
-                width={120}
-                height={120}
-                fill={'purple'}
-                draggable={true} />
-              <Line
-                points={[50, 200, 500, 200]}
-                stroke={'red'}
-                strokeWidth={3} />
-              <Star
-                x={width / 2}
-                y={height / 2}
-                numPoints={5}
-                innerRadius={40}
-                outerRadius={70}
-                fill={'deeppink'}
-                stroke={'black'}
-                strokeWidth={2}
-                draggable={true} />
-              <Wedge
-                x={width * 0.8}
-                y={height * 0.2}
-                radius={120}
-                angle={70}
-                fill={'deepskyblue'}
-                stroke={'black'}
-                strokeWidth={2}
-                rotation={-120}
-                draggable={true} />
+                name={blocksNames[0]}
+                x={2}
+                y={2}
+                width={width * 0.2}
+                height={height * 0.66}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+                />  
+
+              <Rect
+                name={blocksNames[1]}
+                x={(width * 0.2) + strokeWidth}
+                y={2}
+                width={(width * 0.2) - strokeWidth}
+                height={(height * 0.33) - strokeWidth}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+              />  
+
+              <Rect
+                name={blocksNames[2]}
+                x={(width * 0.2) + strokeWidth}
+                y={height * 0.33}
+                width={(width * 0.2) - strokeWidth}
+                height={(height * 0.33) - strokeWidth}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+              />  
+
+              <Rect
+                name={blocksNames[3]}
+                x={(width * 0.4) + strokeWidth}
+                y={2}
+                width={(width * 0.2) - strokeWidth}
+                height={(height * 0.66) - strokeWidth}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+              />  
+
+              <Rect
+                name={blocksNames[4]}
+                x={(width * 0.6) + strokeWidth}
+                y={2}
+                width={(width * 0.2) - strokeWidth}
+                height={(height * 0.33) - strokeWidth}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+              />  
+
+              <Rect
+                name={blocksNames[5]}
+                x={(width * 0.6) + strokeWidth}
+                y={height * 0.33}
+                width={(width * 0.2) - strokeWidth}
+                height={(height * 0.33) - strokeWidth}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+              />  
+
+              <Rect
+                name={blocksNames[6]}
+                x={(width * 0.8) + strokeWidth}
+                y={2}
+                width={(width * 0.2) - strokeWidth}
+                height={(height * 0.66) - strokeWidth}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+              />  
+
+              <Rect
+                name={blocksNames[7]}
+                x={2}
+                y={(height * 0.66) + strokeWidth}
+                width={width * 0.5}
+                height={height * 0.33}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+              />  
+
+              <Rect
+                name={blocksNames[8]}
+                x={(width * 0.5) + strokeWidth}
+                y={(height * 0.66) + strokeWidth}
+                width={width * 0.5}
+                height={height * 0.33}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+              /> 
+
             </Group>
           </Layer>
         </Stage>
